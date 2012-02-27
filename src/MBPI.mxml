@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   xmlns:example="*"
+			   xmlns="*"
+			   applicationComplete="onAddedToStage(event)" width="480" height="824" currentState="State1">
+	<s:layout>
+		<s:BasicLayout/>
+	</s:layout>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<fx:Script source="main.as"/>
+	
+	<s:states>
+		<s:State name="State1"/>
+		<s:State name="State2"/>
+	</s:states>
+	
+	
+	<s:BorderContainer
+		id = "imageBorder"
+		borderStyle="inset" borderWeight="2" 
+		width="423" x="29" height="673" y="45">
+		<s:Graphic x="0" y="0">
+			<s:BitmapImage id="body"
+						   source.State1="@Embed(source='assets/front.jpg')" 
+						   source.State2="@Embed(source='assets/back.jpg')" 
+						   width="400" fillMode="scale"
+						   height="650"/>
+			<s:TextArea id="text" editable="false" restrict="" fontSize="36" fontFamily="Verdana" fontStyle="italic" borderVisible="true" verticalAlign="middle" borderAlpha="1.0" textAlign="center" height="55" x="331" y="149" width="56"/>
+		</s:Graphic>		
+		<example:SimpleClock id="clock" creationComplete="clock.initClock()" x="280" y="20" scaleX="0.5" scaleY="0.5"/>
+		<s:borderStroke>
+			<s:LinearGradientStroke weight="10" rotation="270">
+				<s:GradientEntry color="0xF655E5"/>
+				<s:GradientEntry color="0x6600CC"/>
+			</s:LinearGradientStroke>
+		</s:borderStroke>			
+	</s:BorderContainer> 
+	
+	<s:Button label="SAVE" enabled="true" click="handleSaveButtonClick(event);" id="saveBtn" y="726" width="119" height="61" fontSize="31" x="29"/>
+	<s:Button label="CLEAR" enabled="true" click="handleDelButtonClick(event);" id="delBtn" y="726" width="127" height="61" fontSize="31" x="176"/>
+	<s:Button label="PLAY" enabled="true" click="handlePlayButtonClick(event);" id="playBtn" y="726" width="122" height="61" x="330" fontSize="31"/>
+	
+	<s:RichText id="day" fontSize="32" x="39" y="10" width="402"/>
+	
+</s:Application>
+
+<!---		backgroundImage="{front}" -->

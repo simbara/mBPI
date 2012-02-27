@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:TitleWindow xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					   xmlns:s="library://ns.adobe.com/flex/spark" 
+					   xmlns:mx="library://ns.adobe.com/flex/mx"
+					   creationComplete ="positionPopUp()" skinClass="CustomPopupSkin"
+					   width = "380" height="240" title="Enter Unique ID" fontSize = "30" fontWeight="normal"
+					   backgroundColor="black" backgroundAlpha="0.8" borderColor="black" borderAlpha="0.8" 
+					   cornerRadius="0">
+	<s:layout>
+		<s:VerticalLayout/>
+	</s:layout>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<fx:Script source="UserProfile.as"/> 
+	
+	
+	<s:VGroup verticalAlign="middle" paddingTop="16" paddingLeft="9">
+		
+	<s:TextInput id="idField" text="" width="80%" height="50" paddingBottom="5"/>
+		<s:Button id="continueButton" enabled = "true" click="getUserInfo();" label="Continue" 
+				  width="180" height="61" fontSize="31"/>
+		<!-- <mx:Button 
+			label="Cancel"
+			click="PopUpManager.removePopUp(this);"/> -->
+	</s:VGroup>
+
+</s:TitleWindow>
